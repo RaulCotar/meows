@@ -52,7 +52,7 @@ void handle_request(int client_fd) {
 				cntnt_typ = "application/javascript";
 			break;
 		}
-	printf("\tgetting file \"%s\" - \"%s\" - ", buf+5, cntnt_typ);
+	printf("\tgetting file \"%s\" - \"%s\"\n", buf+5, cntnt_typ);
 	char *header = malloc(strlen(cntnt_typ)+27);
 	strcpy(header, "HTTP/2 200\ncontent-type: ");
 	strcat(header, cntnt_typ);
@@ -73,7 +73,6 @@ void handle_request(int client_fd) {
 	char *fbuf = malloc(strlen(header)+f_stat.st_size+1);
 	strcpy(fbuf, header);
 	fbuf[read(f_fd, fbuf+strlen(header), f_stat.st_size)+strlen(header)]=0;
-	printf("%ld=%ld+%ld\n", f_stat.st_size, strlen(header), f_stat.st_size);
 	free(header);
 	
 	close(f_fd);

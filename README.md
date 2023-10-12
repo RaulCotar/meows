@@ -1,4 +1,4 @@
-<span style="color:slateblue">M</span>iniscale <span style="color:slateblue">E</span>efficient <span style="color:slateblue">O</span>pen <span style="color:slateblue">W</span>eb <span style="color:slateblue">S</span>erver
+<span style="color:#6A5ACD">M</span>iniscale <span style="color:#6A5ACD">E</span>fficient <span style="color:#6A5ACD">O</span>pen <span style="color:#6A5ACD">W</span>eb <span style="color:#6A5ACD">S</span>erver - v1.0.1
 ===
 
 MEOWS is a simple webserver for when few system resources must suffice, for example hosting websites on Raspberry PIs or running a local server while developping a website.
@@ -8,7 +8,7 @@ Thanks to its simple design, it consumes very few system resources and can be qu
 
 It is primarily meant to serve static content, offers an API that can be used to implement server-side scripting and alike.
 
-MEOWS currenly comes as a single-source-file executable (as of version 1.0.0). In the future, this will change to a single-file library and demo application model.
+MEOWS currenly comes as a single-source-file executable (as of version 1.0.1). In the future, this will change to a single-file library and demo application model.
 
 ## Build
 Currently only tested on Linux. Simply run `make`.
