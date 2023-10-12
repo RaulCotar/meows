@@ -1,4 +1,4 @@
-$${\color{orange}M}$$iniscale $${\color{tomato}E}fficient $${\color{tomato}O}pen $${\color{tomato}W}eb $${\color{tomato}S}erver
+ **M**iniscale **E**fficient **O**pen **W**eb **S**erver - v1.0.1
 ===
 
 MEOWS is a simple webserver for when few system resources must suffice, for example hosting websites on Raspberry PIs or running a local server while developping a website.

@@ -1,3 +1,4 @@
+// v1.0.2
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,7 +17,6 @@
 #define MAX_CLIENTS 32
 #define REQ_MSG_BUF_SIZE (1<<10)
 
-//TODO: rethink this whole function an make it actually decent
 void handle_request(int client_fd) {
 	fprintf(stderr, "handling request by fd %d\n", client_fd);
 	char buf[REQ_MSG_BUF_SIZE] = {0};
@@ -52,7 +52,7 @@ void handle_request(int client_fd) {
 				cntnt_typ = "application/javascript";
 			break;
 		}
-	printf("\tgetting file \"%s\" - \"%s\"\n", buf+5, cntnt_typ);
+	printf("\t>> \"%s\" - \"%s\"\n\n", buf+5, cntnt_typ);
 	char *header = malloc(strlen(cntnt_typ)+27);
 	strcpy(header, "HTTP/2 200\ncontent-type: ");
 	strcat(header, cntnt_typ);
@@ -174,6 +174,5 @@ int main(int argc, char **argv) {
 	}
 
 	puts("Closing the socket and terminating...");
-	//close(sockfd);
 	return 0;
 }
