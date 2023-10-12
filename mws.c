@@ -87,10 +87,15 @@ void closesock(void) {
 }
 
 int main(int argc, char **argv) {
+	for (int i=strlen(argv[0]); i>0; i--)
+		if (argv[0][i] == '/') {
+			argv[0]+=i+1;
+			break;
+		}
 	if (!strcmp(argv[0], "meows-help")) {
 		puts("MEOWS - a small & simple web server\n"
 			"The program can be invoked as \"meows-help\" to show this mesage.\n"
-			"Normal usage: meows [PORT]\n");
+			"Normal usage: meows [PORT]\t(default is 8080)\n");
 		return 0;
 	}
 	const int portnr = argc>1? atoi(argv[1]):8080;

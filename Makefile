@@ -7,13 +7,13 @@ CFLAGS := $(subst ${\n}, , $(file < compiler_flags.txt))
 CC := clang
 
 .PHONY: all
-all: demo.out
+all: meows
 
 .PHONY: run
-run: demo.out
+run: meows
 	./$^
 
-demo.out: mws.o
+meows: mws.o
 	$(CC) $(CFLAGS) $^ -o $@
 
 %.o: %.c Makefile
@@ -21,4 +21,4 @@ demo.out: mws.o
 
 .PHONY: clean
 clean:
-	rm -rf *.o *.a *.out
+	rm -rf *.o *.a *.out meows
